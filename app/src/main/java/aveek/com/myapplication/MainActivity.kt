@@ -11,6 +11,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Toast.makeText(this,CoreApp.getRealm(),Toast.LENGTH_LONG).show()
+        Toast.makeText(this,CoreApp.getGithubRepo().testVal,Toast.LENGTH_LONG).show()
+
     }
 
 }

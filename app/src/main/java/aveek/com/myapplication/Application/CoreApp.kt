@@ -1,10 +1,21 @@
 package aveek.com.myapplication.Application
 
 import android.app.Application
+import aveek.com.myapplication.Model.GithubRepo
 
-object CoreApp : Application(){
+object CoreApp : Application() {
 
-    fun getRealm() : String{
+    var gitHubRepo: GithubRepo
+
+    init {
+        gitHubRepo = GithubRepo()
+    }
+
+    fun getRealm(): String {
         return "Test"
+    }
+
+    fun getGithubRepo(): GithubRepo {
+        return gitHubRepo
     }
 }
