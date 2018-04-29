@@ -1,4 +1,4 @@
-package aveek.com.myapplication.Model
+package aveek.com.learnadvancedandroid.Model
 
 class GithubRepo {
     val testVal : String = "abcd"

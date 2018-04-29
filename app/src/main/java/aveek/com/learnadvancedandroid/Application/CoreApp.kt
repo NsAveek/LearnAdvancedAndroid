@@ -1,7 +1,7 @@
-package aveek.com.myapplication.Application
+package aveek.com.learnadvancedandroid.Application
 
 import android.app.Application
-import aveek.com.myapplication.Model.GithubRepo
+import aveek.com.learnadvancedandroid.Model.GithubRepo
 
 object CoreApp : Application() {
 

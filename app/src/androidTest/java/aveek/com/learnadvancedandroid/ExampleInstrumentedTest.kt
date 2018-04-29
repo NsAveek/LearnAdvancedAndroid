@@ -1,4 +1,4 @@
-package aveek.com.myapplication
+package aveek.com.learnadvancedandroid
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
