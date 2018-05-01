@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.widget.ProgressBar
 import android.widget.Toast
+import aveek.com.learnadvancedandroid.Adapter.HomeAdapter
 import aveek.com.learnadvancedandroid.Application.CoreApp
 import aveek.com.learnadvancedandroid.Model.GithubRepo
 import io.reactivex.disposables.Disposable
