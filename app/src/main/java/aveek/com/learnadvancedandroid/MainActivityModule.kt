@@ -2,7 +2,9 @@ package aveek.com.learnadvancedandroid
 
 import android.content.Context
 import android.support.v7.widget.GridLayoutManager
+import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import aveek.com.learnadvancedandroid.Adapter.ListAdapter
 import aveek.com.learnadvancedandroid.Model.GithubRepo
 import dagger.Module
 import dagger.Provides
@@ -17,12 +19,12 @@ class MainActivityModule (var context : Context){
 
     @Provides
     fun getRecyclerViewLayoutManager () : RecyclerView.LayoutManager{
-        return GridLayoutManager(context,2)
+        return LinearLayoutManager(context)
     }
 
     @Provides
-    fun getAveek () : String{
-        return "Aveek"
+    fun getRecyclerViewAdapter () : ListAdapter{
+        return ListAdapter(context, listOf("a","b","c"))
     }
 
 }

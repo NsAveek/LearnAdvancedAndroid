@@ -15,11 +15,11 @@ class MainActivity : AppCompatActivity() {
     lateinit var getRecyclerViewLayoutManager : RecyclerView.LayoutManager
 
     @Inject
-    lateinit var getAveek : String
+    lateinit var getRecyclerViewAdapter : ListAdapter
 
-
-    lateinit var mRecyclerView : RecyclerView
+//    lateinit var mRecyclerView : RecyclerView
     /*
+    lateinit var mRecyclerView : RecyclerView
     lateinit var mProgressBar : ProgressBar
     lateinit var mGithubRepo: GithubRepo
     lateinit var mAdapter : ListAdapter
@@ -27,15 +27,16 @@ class MainActivity : AppCompatActivity() {
     lateinit var mDisposable: Disposable*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Toast.makeText(this, CoreApp.getRealm(),Toast.LENGTH_LONG).show()
         Toast.makeText(this, CoreApp.getGithubRepo().testVal,Toast.LENGTH_LONG).show()
-        initRecyclerViews()
         DaggerMainActivityComponent.builder()
                 .mainActivityModule(MainActivityModule(this))
                 .build()
                 .injectOrInsert(this)
+        initRecyclerViews()
 
 //        mGithubRepo = CoreApp.getGithubRepo()
 //        initViews()
@@ -53,16 +54,14 @@ class MainActivity : AppCompatActivity() {
 
     */
    private fun initRecyclerViews() {
-       Toast.makeText(this, getAveek, Toast.LENGTH_LONG).show()
 //       mLayoutManager = LinearLayoutManager(this)
 //       mAdapter = ListAdapter(ArrayList<String>())
-//       mRecyclerView = findViewById(R.id.mainActivity_recycler_view) as RecyclerView
-//       mRecyclerView = findViewById <RecyclerView> (R.id.mainActivity_recycler_view)
-       mainActivity_recycler_view.layoutManager = getRecyclerViewLayoutManager
-//       mainActivity_recycler_view.adapter
-//       mainActivity_recycler_view.adapter
-//       mRecyclerView.setLayoutManager(mLayoutManager)
-//       mRecyclerView.setAdapter(mAdapter)
+//       mRecyclerView = findViewById(R.id.mainActivity_recycler_view) as RecyclerView // This is one approach to declare xml variables into the kotlin code
+//       mRecyclerView = findViewById <RecyclerView> (R.id.mainActivity_recycler_view) // This is another approach to declare xml variables into the kotlin code
+       mainActivity_recycler_view.layoutManager = getRecyclerViewLayoutManager  // This is another approach to declare xml variables into the kotlin code
+//       mRecyclerView.setLayoutManager(getRecyclerViewLayoutManager)
+       mainActivity_recycler_view.adapter = getRecyclerViewAdapter
+//       mRecyclerView.setAdapter(getRecyclerViewAdapter)
    }
 
 

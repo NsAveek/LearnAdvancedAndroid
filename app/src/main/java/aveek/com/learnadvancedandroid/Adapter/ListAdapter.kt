@@ -9,7 +9,7 @@ import aveek.com.learnadvancedandroid.R
 class ListAdapter(var context : Context, var itemList: List<String>) : RecyclerView.Adapter<ListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ListViewHolder {
-        return ListViewHolder(View.inflate(context, R.layout.row_home, parent))
+        return ListViewHolder(View.inflate(context, R.layout.row_home, null))
     }
 
     override fun getItemCount(): Int {
