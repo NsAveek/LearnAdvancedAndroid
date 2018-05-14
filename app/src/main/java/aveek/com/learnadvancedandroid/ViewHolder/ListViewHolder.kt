@@ -1,4 +1,4 @@
-package aveek.com.learnadvancedandroid.Adapter
+package aveek.com.learnadvancedandroid.ViewHolder
 
 import android.support.v7.widget.RecyclerView
 import android.view.View

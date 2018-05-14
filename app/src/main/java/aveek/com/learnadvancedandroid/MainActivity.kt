@@ -6,6 +6,8 @@ import android.support.v7.widget.RecyclerView
 import android.widget.Toast
 import aveek.com.learnadvancedandroid.Adapter.ListAdapter
 import aveek.com.learnadvancedandroid.Application.CoreApp
+import aveek.com.learnadvancedandroid.Module.MainActivityModule
+import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
@@ -27,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var mDisposable: Disposable*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
+//        AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Toast.makeText(this, CoreApp.getRealm(),Toast.LENGTH_LONG).show()

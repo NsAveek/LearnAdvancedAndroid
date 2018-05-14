@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
 import aveek.com.learnadvancedandroid.R
+import aveek.com.learnadvancedandroid.ViewHolder.ListViewHolder
 
 class ListAdapter(var context : Context, var itemList: List<String>) : RecyclerView.Adapter<ListViewHolder>() {
 
