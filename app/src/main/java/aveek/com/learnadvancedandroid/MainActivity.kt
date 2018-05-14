@@ -1,5 +1,6 @@
 package aveek.com.learnadvancedandroid
 
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.RecyclerView
@@ -7,6 +8,7 @@ import android.widget.Toast
 import aveek.com.learnadvancedandroid.Adapter.ListAdapter
 import aveek.com.learnadvancedandroid.Application.CoreApp
 import aveek.com.learnadvancedandroid.Module.MainActivityModule
+import aveek.com.learnadvancedandroid.VM.ProfileViewModel
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
@@ -18,6 +20,9 @@ class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var getRecyclerViewAdapter : ListAdapter
+
+    @Inject
+    lateinit var provideProfileViewModel: ProfileViewModel
 
 //    lateinit var mRecyclerView : RecyclerView
     /*
@@ -34,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         Toast.makeText(this, CoreApp.getRealm(),Toast.LENGTH_LONG).show()
         Toast.makeText(this, CoreApp.getGithubRepo().testVal,Toast.LENGTH_LONG).show()
+        var prfvm = ViewModelProviders.of(this).get(ProfileViewModel::class.java)
         DaggerMainActivityComponent.builder()
                 .mainActivityModule(MainActivityModule(this))
                 .build()

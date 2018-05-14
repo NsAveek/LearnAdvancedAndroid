@@ -1,6 +1,8 @@
 package aveek.com.learnadvancedandroid.VM
 
-class ProfileViewModel : V{
+import android.arch.lifecycle.ViewModel
+
+class ProfileViewModel : ViewModel() {
 
 
 }
