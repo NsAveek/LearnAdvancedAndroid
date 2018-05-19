@@ -1,17 +1,18 @@
 package aveek.com.learnadvancedandroid
 
-import android.arch.lifecycle.ViewModelProviders
+import android.databinding.ViewDataBinding
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.RecyclerView
-import android.widget.Toast
+import android.view.View
 import aveek.com.learnadvancedandroid.Adapter.ListAdapter
-import aveek.com.learnadvancedandroid.Application.CoreApp
+import aveek.com.learnadvancedandroid.Component.DaggerMainActivityComponent
 import aveek.com.learnadvancedandroid.Module.MainActivityModule
-import aveek.com.learnadvancedandroid.VM.ProfileViewModel
-import dagger.android.AndroidInjection
+import aveek.com.learnadvancedandroid.VM.ActivityProfileViewModel
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.view.*
 import javax.inject.Inject
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,29 +23,26 @@ class MainActivity : AppCompatActivity() {
     lateinit var getRecyclerViewAdapter : ListAdapter
 
     @Inject
-    lateinit var provideProfileViewModel: ProfileViewModel
+    lateinit var provideProfileViewModel : ActivityProfileViewModel
 
-//    lateinit var mRecyclerView : RecyclerView
-    /*
-    lateinit var mRecyclerView : RecyclerView
-    lateinit var mProgressBar : ProgressBar
-    lateinit var mGithubRepo: GithubRepo
-    lateinit var mAdapter : ListAdapter
-    lateinit var mLayoutManager: RecyclerView.LayoutManager
-    lateinit var mDisposable: Disposable*/
+    @Inject
+    lateinit var binding : ViewDataBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
 //        AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        Toast.makeText(this, CoreApp.getRealm(),Toast.LENGTH_LONG).show()
-        Toast.makeText(this, CoreApp.getGithubRepo().testVal,Toast.LENGTH_LONG).show()
-        var prfvm = ViewModelProviders.of(this).get(ProfileViewModel::class.java)
+
         DaggerMainActivityComponent.builder()
                 .mainActivityModule(MainActivityModule(this))
                 .build()
                 .injectOrInsert(this)
+
+        binding.setVariable(BR.viewModel, provideProfileViewModel)
+
         initRecyclerViews()
+
+        binding.root.mainActivity_progress_bar.visibility = View.GONE
 
 //        mGithubRepo = CoreApp.getGithubRepo()
 //        initViews()
