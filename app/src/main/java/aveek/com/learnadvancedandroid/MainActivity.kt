@@ -4,7 +4,6 @@ import android.databinding.ViewDataBinding
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import aveek.com.learnadvancedandroid.Adapter.ListAdapter
@@ -13,16 +12,12 @@ import aveek.com.learnadvancedandroid.Module.MainActivityModule
 import aveek.com.learnadvancedandroid.VM.ActivityProfileViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
-import io.reactivex.functions.Consumer
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.view.*
-import java.util.*
-import javax.inject.Inject
-import io.reactivex.internal.util.NotificationLite.disposable
-import io.reactivex.observers.DisposableObserver
 import org.reactivestreams.Subscriber
 import org.reactivestreams.Subscription
+import javax.inject.Inject
 
 
 class MainActivity : AppCompatActivity() {

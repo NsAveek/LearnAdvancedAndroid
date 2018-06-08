@@ -23,6 +23,8 @@ buildscript {
         supportLibrary = '26.1.0'
         testRunner = '1.0.2'
         okhttpinterceptor = '3.8.1'
+        realm_gradle_plugin_version= '3.1.4'
+        realm_android_adapter= '2.0.0'
 
     }
 
@@ -30,6 +32,7 @@ buildscript {
         classpath "com.android.tools.build:gradle:$gradle_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
+        classpath "io.realm:realm-gradle-plugin:$realm_gradle_plugin_version"
     }
 }
 

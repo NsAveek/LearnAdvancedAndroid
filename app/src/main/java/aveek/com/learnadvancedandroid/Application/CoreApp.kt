@@ -2,6 +2,8 @@ package aveek.com.learnadvancedandroid.Application
 
 import android.app.Application
 import aveek.com.learnadvancedandroid.Model.GithubRepo
+import io.realm.Realm
+import io.realm.RealmConfiguration
 
 object CoreApp : Application() {
 
@@ -9,6 +11,7 @@ object CoreApp : Application() {
 
     init {
         gitHubRepo = GithubRepo()
+        initRealm()
     }
 
     fun getRealm(): String {
@@ -17,5 +20,10 @@ object CoreApp : Application() {
 
     fun getGithubRepo(): GithubRepo {
         return gitHubRepo
+    }
+    fun initRealm(){
+        Realm.init(this)
+        val realmConfig : RealmConfiguration = RealmConfiguration.Builder().name("learnadvancedandroid.realm").schemaVersion(0).build()
+        Realm.setDefaultConfiguration(realmConfig)
     }
 }
