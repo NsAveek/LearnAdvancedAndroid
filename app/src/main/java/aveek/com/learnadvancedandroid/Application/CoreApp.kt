@@ -25,5 +25,6 @@ object CoreApp : Application() {
         Realm.init(this)
         val realmConfig : RealmConfiguration = RealmConfiguration.Builder().name("learnadvancedandroid.realm").schemaVersion(0).build()
         Realm.setDefaultConfiguration(realmConfig)
+        // We will integrate the realm to the module later
     }
 }
