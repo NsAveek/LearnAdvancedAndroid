@@ -3,9 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ProfileActivity">
 
     <android.support.design.widget.AppBarLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
@@ -19,12 +21,63 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+    <!--<android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+        <TextView
+            android:id="@+id/TV1"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="44dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:text="TV1"
+            app:layout_constraintBottom_toTopOf="@+id/BTN2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.323"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <Button
+            android:id="@+id/BTN2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BTN2"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="142dp" />
+
+        <TextView
+            android:id="@+id/TV2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:text="TV2"
+            app:layout_constraintBottom_toBottomOf="@+id/BTN1"
+            app:layout_constraintTop_toTopOf="@+id/BTN2"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_editor_absoluteX="142dp" />
+
+
+        <Button
+            android:id="@+id/BTN1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="136dp"
+            android:text="BTN1"
+            app:layout_constraintTop_toBottomOf="@+id/TV1"
+            tools:layout_editor_absoluteX="280dp" />
+
+
+
+    </android.support.constraint.ConstraintLayout>-->
+
+
+
 
 </android.support.design.widget.CoordinatorLayout>

@@ -51,7 +51,10 @@ class MainActivity : AppCompatActivity() {
 
         initRecyclerViews()
 
-        binding.root.mainActivity_progress_bar.visibility=View.GONE
+        binding.root.mainActivity_progress_bar.visibility=View.VISIBLE
+        binding.root.mainActivity_progress_bar.setOnClickListener{
+            Toast.makeText(this,"Clicked the progressBar",Toast.LENGTH_LONG).show()
+        }
 
         lambdaTest()
         initObservable()
@@ -59,6 +62,7 @@ class MainActivity : AppCompatActivity() {
 //        mGithubRepo = CoreApp.getGithubRepo()
 //        initViews()
 //        loadData()
+
 
     }
 

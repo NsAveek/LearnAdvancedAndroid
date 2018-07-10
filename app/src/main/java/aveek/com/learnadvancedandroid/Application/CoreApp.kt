@@ -1,18 +1,38 @@
 package aveek.com.learnadvancedandroid.Application
 
 import android.app.Application
+import aveek.com.learnadvancedandroid.Component.DaggerApplicationComponent
 import aveek.com.learnadvancedandroid.Model.GithubRepo
+import aveek.com.learnadvancedandroid.Module.ApplicationModule
 import io.realm.Realm
 import io.realm.RealmConfiguration
+import javax.inject.Inject
 
-object CoreApp : Application() {
+class CoreApp : Application() {
+
+    @Inject
+    lateinit var provideRealm : Realm
+
+    @Inject
+    lateinit var getRealmConfiguration: RealmConfiguration
 
     var gitHubRepo: GithubRepo
 
     init {
+
         gitHubRepo = GithubRepo()
+        initDagger()
         initRealm()
     }
+
+    private fun initDagger() {
+        DaggerApplicationComponent.builder()
+                .applicationModule(ApplicationModule(this))
+                .build()
+                .injectApplication(this)
+
+    }
+
 
     fun getRealm(): String {
         return "Test"
@@ -23,8 +43,6 @@ object CoreApp : Application() {
     }
     fun initRealm(){
         Realm.init(this)
-        val realmConfig : RealmConfiguration = RealmConfiguration.Builder().name("learnadvancedandroid.realm").schemaVersion(0).build()
-        Realm.setDefaultConfiguration(realmConfig)
-        // We will integrate the realm to the module later
+        Realm.setDefaultConfiguration(getRealmConfiguration)
     }
 }
