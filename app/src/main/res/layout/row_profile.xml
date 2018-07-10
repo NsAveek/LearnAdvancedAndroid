@@ -6,8 +6,6 @@
     android:layout_height="match_parent">
 
 
-
-
     <!--<ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
@@ -184,9 +182,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginRight="32dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Name"
@@ -199,11 +197,11 @@
     <TextView
         android:id="@+id/addressTextView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="91dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginRight="32dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Address"
@@ -218,14 +216,15 @@
         android:id="@+id/pickUpTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
         android:text="pickup"
-        app:layout_constraintBottom_toBottomOf="@+id/timeTextView"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/timeTextView"
         app:layout_constraintEnd_toEndOf="@+id/bottomContainer"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -233,18 +232,18 @@
 
     <TextView
         android:id="@+id/timeTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="44dp"
+        android:layout_height="23dp"
         android:layout_marginBottom="32dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginRight="32dp"
         android:layout_marginStart="32dp"
         android:text="Now"
-        android:textStyle="bold"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/bottomContainer"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/priceValueTextView"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pickUpTextView"
@@ -254,47 +253,66 @@
         android:id="@+id/priceTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginStart="16dp"
         android:text="price"
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="153dp" />
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/pickUpTextView"
+        app:layout_constraintEnd_toStartOf="@+id/statusTextView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/pickUpTextView" />
 
     <TextView
         android:id="@+id/priceValueTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         android:text="Rp 42.000"
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="183dp" />
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/timeTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.00"
+        app:layout_constraintStart_toStartOf="@+id/priceTextView" />
 
     <TextView
         android:id="@+id/statusTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="status"
-        tools:layout_editor_absoluteX="200dp"
-        tools:layout_editor_absoluteY="153dp" />
+        android:textSize="16dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/pickUpTextView"
+        app:layout_constraintEnd_toStartOf="@+id/productImageView"
+        app:layout_constraintStart_toEndOf="@+id/priceTextView" />
 
     <TextView
         android:id="@+id/deliveryTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pickup"
-        tools:layout_editor_absoluteX="200dp"
-        tools:layout_editor_absoluteY="183dp" />
+        android:textSize="16dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/timeTextView"
+        app:layout_constraintStart_toStartOf="@+id/statusTextView" />
 
     <ImageView
         android:id="@+id/productImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/timeTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/pickUpTextView"
         app:srcCompat="@mipmap/ic_launcher"
-        tools:layout_editor_absoluteX="312dp"
-        tools:layout_editor_absoluteY="153dp" />
+        tools:ignore="MissingConstraints" />
 
     <View
         android:id="@+id/bottomContainer"
         android:layout_width="0dp"
         android:layout_height="113dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="40dp"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
